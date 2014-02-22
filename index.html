@@ -92,12 +92,14 @@ b="SHA-1"===b?Z(D.concat(Z(C.concat(p),a+n)),a+x):$(D.concat($(C.concat(p),a+n,b
 				var hashInput = document.getElementById("hashInputText");
 				var hashInputType = document.getElementById("hashInputType");
 				var hashVariant = document.getElementById("hashVariant");
+				var hashRounds = document.getElementById("hashRounds");
 				var hashOutputType = document.getElementById("hashOutputType");
 				var hashOutput = document.getElementById("hashOutputText");
 				var hashObj = new jsSHA(hashInput.value, hashInputType.options[hashInputType.selectedIndex].value);
 				hashOutput.value = hashObj.getHash(
 					hashVariant.options[hashVariant.selectedIndex].value,
-					hashOutputType.options[hashOutputType.selectedIndex].value
+					hashOutputType.options[hashOutputType.selectedIndex].value,
+					parseInt(hashRounds.value, 10)
 				);
 			} catch(e) {
 				hashOutput.value = e
@@ -141,7 +143,7 @@ b="SHA-1"===b?Z(D.concat(Z(C.concat(p),a+n)),a+x):$(D.concat($(C.concat(p),a+n,b
 		<div>
 			<h1>Newest Release / Download</h1>
 			<p>
-				As of 28 December 2012, the newest release is v1.42 and can be found at <a href="https://github.com/Caligatio/jsSHA/tree/release-1.42">GitHub</a>.
+				As of 15 December 2013, the newest release is v1.5.0 and can be found at <a href="https://github.com/Caligatio/jsSHA/releases/tag/v1.5.0">GitHub</a>.
 			</p>
 		</div>
 		<div>
@@ -176,6 +178,9 @@ b="SHA-1"===b?Z(D.concat(Z(C.concat(p),a+n)),a+x):$(D.concat($(C.concat(p),a+n,b
 							<option>SHA-384</option>
 							<option>SHA-512</option>
 						</select>
+					</div>
+					<div>
+						<label for="hashRounds">Number of Rounds:</label><input type="text" size="5" name="hashRounds" id="hashRounds" value="1" onkeyup="calcHash()" />
 					</div>
 					<div>
 						<label for="hashOutputType">Output Type:</label>
@@ -242,7 +247,7 @@ b="SHA-1"===b?Z(D.concat(Z(C.concat(p),a+n)),a+x):$(D.concat($(C.concat(p),a+n,b
 			</form>
 		</div>
 				<div id="copyright">
-			Copyright &copy; 2008-2012 <a href="https://github.com/Caligatio/">Brian Turek</a>
+			Copyright &copy; 2008-2013 <a href="https://github.com/Caligatio/">Brian Turek</a>
 		</div>
 	</div>
 </body>
