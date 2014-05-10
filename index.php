@@ -128,7 +128,7 @@
 						</select>
 					</div>
 					<div>
-						<label for="hmacInputKey">Key:</label><input type="password" size="75" name="hmacInputKey" id="hmacInputKey" onkeyup="calcHMAC()" autocomplete="off"/>
+						<label for="hmacInputKey">Key:</label><input type="password" size="75" name="hmacInputKey" id="hmacInputKey" onkeyup="calcHMAC()" autocomplete="off" autofocus="autofocus"/>
 					</div>
 					<div>
 						<label for="hmacKeyType">Key Type:</label>
