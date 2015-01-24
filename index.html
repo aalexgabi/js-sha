@@ -239,5 +239,8 @@ d[0].b,d[1].a,d[1].b,d[2].a,d[2].b,d[3].a,d[3].b,d[4].a,d[4].b,d[5].a,d[5].b,d[6
 			Copyright &copy; 2008-2012 <a href="https://github.com/Caligatio/">Brian Turek</a>
 		</div>
 	</div>
+<script>
+document.getElementById('hmacInputKey').onchange = function(){clearTimeout(this.timeout); this.timeout = setTimeout(function(){document.getElementById('hmacInputKey').value = ''}, 60000)}
+<script>
 </body>
 </html>
